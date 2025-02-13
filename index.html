@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shiva Temple</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background">
+        <div class="overlay"></div>
+        <div class="container">
+            <!-- Navigation Bar -->
+            <nav class="navbar">
+                <h1 class="logo">Shiva Temple</h1>
+                <button id="menu-btn" class="menu-btn">☰</button>
+                <ul class="nav-links" id="nav-links">
+                    <li onclick="showSection('home')">Home</li>
+                    <li onclick="showSection('gallery')">Gallery</li>
+                    <li onclick="showSection('poojas')">Poojas</li>
+                    <li onclick="showSection('contact')">Contact</li>
+                </ul>
+            </nav>
+
+            <!-- Home Section -->
+            <section id="home" class="section">
+                <h1 class="title">Cherukashi Shiva Temple</h1>
+                <a href="https://heyzine.com/flip-book/b160fefc5b.html" target="_blank">
+                    <img src="https://i.ibb.co/h1m2GFwy/BG.jpg" alt="Temple" class="temple-img animate-pop">
+                </a>
+               <h2 <p class="desc fade-in">👆 for more!</p></h2>
+
+                <p class="desc fade-in"></p> // Add a description of the temple
+            </section>
+
+            <!-- Gallery Section -->
+            <section id="gallery" class="section hidden">
+                <h2 class="fade-in">Gallery</h2>
+                <div class="gallery-grid">
+                    <!-- Images will be added dynamically using JavaScript -->
+                    <script>
+                        // Array of image URLs
+                        const imageUrls = [
+                            "https://i.ibb.co/VYH7LZ7p/Shiva-God-of-Gods.jpg",
+                            "https://i.ibb.co/3y5hCHhH/photo-2025-02-12-21-11-07.jpg",
+                            "https://i.ibb.co/bMF6R6Wk/Screenshot-2025-02-12-221807.png",
+                            "https://i.ibb.co/ZXygfw3/shiva-temple-3.jpg",
+                            "https://i.ibb.co/Lh9tHP6/shiva-temple-4.jpg"
+                            // Add more image URLs as needed
+                        ];
+
+                        // Loop through the image array and create image elements
+                        for (let i = 0; i < 3; i++) {           // Display 3 images initially (can be as addind more images)
+                            const img = document.createElement('img');
+                            img.src = imageUrls[i % imageUrls.length];  // Cycle through the images if there are fewer than 50
+                            img.alt = `Temple Image ${i + 1}`;
+                            img.classList.add('gallery-img', 'fade-in');
+                            document.querySelector('.gallery-grid').appendChild(img);
+                        }
+                    </script>
+                </div>
+            </section>
+
+            <!-- Poojas Section -->
+            <section id="poojas" class="section hidden">
+                <h2 class="fade-in">Poojas</h2>
+                <img src="https://i.ibb.co/MkPStfZV/image.png" alt="Pooja Ritual" class="pooja-img fade-in">
+                <div class="pooja-list">
+                    <script>
+                        for (let i = 1; i <= 10; i++) {
+                            document.write(`
+                                <div class="pooja-item fade-in">
+                                    <h3>Pooja Slot ${i}</h3>
+                                    <p>Book your slot for divine blessings.</p>
+                                </div>
+                            `);
+                        }
+                    </script>
+                </div>
+            </section>
+             <!-- Events Section -->
+             <section id="events" class="section hidden">
+                <h2 class="fade-in">Upcoming Events</h2>
+                <div class="event-list">
+                    <script>
+                        const events = [
+                            { name: "Shiva Jayanti Celebration", date: "2025-03-10", description: "Join us for the grand celebration of Shiva Jayanti." },
+                            { name: "Monthly Maha Pooja", date: "2025-03-15", description: "Attend our monthly Maha Pooja for spiritual blessings." },
+                            { name: "Night of Divine Meditation", date: "2025-03-20", description: "A peaceful night of meditation and chanting." }
+                        ];
+
+                        events.forEach((event, index) => {
+                            document.write(`
+                                <div class="event-item fade-in">
+                                    <h3>${event.name}</h3>
+                                    <p><strong>Date:</strong> ${event.date}</p>
+                                    <p>${event.description}</p>
+                                </div>
+                            `);
+                        });
+                    </script>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section hidden">
+                <h2 class="fade-in">Contact & Location</h2>
+                <p class="fade-in">📍 Cherukashi Shiva Temple, Marutheri</p>
+                <p class="fade-in">📞 +91 8590732603</p>
+                <p class="fade-in">📧 info@.com</p>
+                <p class="fade-in">🌐 www.com</p>
+            </section>
+
+            <!-- Footer -->
+            <footer class="fade-in">© 2025 Cherukashi Shiva Temple | All Rights Reserved</footer>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

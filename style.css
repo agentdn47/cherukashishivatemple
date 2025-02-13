@@ -1,0 +1,167 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.background {
+    min-height: 100vh;
+    background: url('https://i.ibb.co/h1m2GFwy/BG.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Container */
+.container {
+    position: relative;
+    z-index: 10;
+    padding: 20px;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(20, 20, 20, 0.9);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: orange;
+}
+
+/* Navigation Animations */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.nav-links li {
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.nav-links li:hover {
+    color: orange;
+    transform: scale(1.1);
+}
+
+/* Mobile Menu Button */
+.menu-btn {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(20, 20, 20, 0.9);
+        padding: 10px;
+        position: absolute;
+        right: 10px;
+        top: 50px;
+        border-radius: 10px;
+        animation: slideDown 0.5s ease-in-out;
+    }
+}
+
+/* Animations */
+@keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+    0% { transform: translateY(-20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-pop {
+    animation: pop 0.5s ease-in-out;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Sections */
+.section {
+    display: none;
+    margin: 30px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.temple-img, .pooja-img {
+    max-width: 80%;
+    border-radius: 10px;
+    border: 3px solid orange;
+    box-shadow: 0 4px 10px rgba(255, 165, 0, 0.6);
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: gray;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+.desc {
+    font-size: 50px; /* Size of the emoji */
+    color: #7e160f; /* Color of the text */
+    text-align: center; /* Center the text */
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
